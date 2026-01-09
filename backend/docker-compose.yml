@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:15
+    container_name: mart-backend-db
+    restart: always
+    environment:
+      POSTGRES_USER: calvio_user
+      POSTGRES_PASSWORD: This_Is_My_Strong_Password_123_cr7!
+      POSTGRES_DB: calvio_mart
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U calvio_user -d calvio_mart"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: mart-backend-api
+    command: npm run start:dev
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - ./uploads:/app/uploads
+
+volumes:
+  pgdata:

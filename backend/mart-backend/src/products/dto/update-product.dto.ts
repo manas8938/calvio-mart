@@ -1,0 +1,9 @@
+// src/products/dto/update-product.dto.ts
+import { PartialType } from '@nestjs/mapped-types';
+import { CreateProductDto } from './create-product.dto';
+import { ApiPropertyOptional } from '@nestjs/swagger';
+
+export class UpdateProductDto extends PartialType(CreateProductDto) {
+  @ApiPropertyOptional({ description: 'Soft delete flag', example: false })
+  isDeleted?: boolean;
+}

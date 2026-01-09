@@ -1,0 +1,128 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 40px;
+  background: var(--color-dark-gradient);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
+}
+
+.logo {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  background: #ffffff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 560px;
+  height: 56px;
+  padding: 0 20px;
+  background: #ffffff;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+}
+
+.searchBar:focus-within {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 0 0 4px rgba(226, 232, 240, 0.4);
+}
+
+.search-icon {
+  color: var(--color-primary-start);
+  opacity: 0.9;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: var(--color-text-dark);
+}
+
+.search-input::placeholder {
+  color: var(--color-text-light);
+}
+
+.header-rightside {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-cart,
+.user-icon {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+  color: #ffffff;
+}
+
+.icon-cart:hover,
+.user-icon:hover {
+  background: #ffffff;
+  color: var(--color-primary-start);
+  transform: scale(1.05);
+}
+
+.jm-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--color-error);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border: 2px solid #ffffff;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .searchBar {
+    width: 100%;
+    max-width: none;
+    order: 3;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  .header-rightside {
+    order: 2;
+  }
+}

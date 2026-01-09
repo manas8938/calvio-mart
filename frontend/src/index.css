@@ -1,0 +1,11 @@
+/* Add this to your global CSS */
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+  background: #f8fafc;
+}

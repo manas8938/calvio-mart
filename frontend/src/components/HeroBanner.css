@@ -1,0 +1,120 @@
+/* src/components/HeroBanner.css — YOUR ORIGINAL BEAUTIFUL DESIGN */
+.banner {
+  position: relative;
+  width: 90%;
+  height: 500px;
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.75)),
+    url(../assets/home.jpg) center/cover no-repeat;
+  border-radius: 20px;
+  margin: 32px auto;
+  max-width: 1500px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(218, 216, 254, 0.3), rgba(251, 248, 255, 0.4));
+}
+
+.sale-ribbon {
+  position: absolute;
+  top: 40px;
+  left: -60px;
+  background: #ef4444;
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 12px 80px;
+  transform: rotate(-42deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  letter-spacing: 1px;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+}
+
+.content-title {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+  background: black;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.subtitle {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #334155;
+  letter-spacing: 0.2px;
+}
+
+.shop-now {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+  transition: all 0.3s ease;
+}
+
+.shop-now:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(124, 58, 237, 0.5);
+}
+
+/* RESPONSIVE — SAME AS YOUR ORIGINAL */
+@media (max-width: 768px) {
+  .banner {
+    height: 500px;
+    margin: 24px 16px;
+    border-radius: 20px;
+  }
+  .content-title {
+    font-size: 42px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+  .sale-ribbon {
+    font-size: 18px;
+    padding: 10px 70px;
+    left: -65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-title {
+    font-size: 36px;
+  }
+  .content {
+    padding: 0 24px;
+  }
+}
