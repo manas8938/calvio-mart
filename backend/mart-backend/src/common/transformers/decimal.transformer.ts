@@ -1,4 +1,3 @@
-// src/common/transformers/decimal.transformer.ts
 import { ValueTransformer } from 'typeorm';
 
 export const ColumnNumericTransformer: ValueTransformer = {
