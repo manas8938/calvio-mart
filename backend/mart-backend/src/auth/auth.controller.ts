@@ -1,4 +1,3 @@
-// src/auth/auth.controller.ts - FINAL COMPLETE FIX
 import {
   Controller,
   Post,
