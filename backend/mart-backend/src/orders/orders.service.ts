@@ -1,4 +1,3 @@
-// src/orders/orders.service.ts
 import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, In } from 'typeorm';
@@ -75,7 +74,6 @@ export class OrdersService {
     const totalAmount = Number((subtotal + deliveryCharge).toFixed(2));
 
     const saved = await this.orderRepo.manager.transaction(async (manager) => {
-      // decrement stock within transaction
       for (const item of itemsEntities) {
         await manager.decrement(Product, { id: item.product.id }, 'stock', item.quantity);
       }
@@ -184,10 +182,7 @@ export class OrdersService {
     await this.orderRepo.save(order);
     return { ok: true, message: 'Order soft-deleted' };
   }
-
-  // ==============================
-  // New: Find orders by user email
-  // ==============================
+  // Find orders by user email
   async findByEmail(email: string) {
     const orders = await this.orderRepo.find({
       where: { email, isDeleted: false },
