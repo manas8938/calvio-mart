@@ -1,4 +1,3 @@
-// src/users/users.service.ts - COMPLETELY FIXED
 import { Injectable, NotFoundException, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -55,12 +54,10 @@ export class UsersService {
 
   async create(userData: Partial<User>): Promise<User> {
     try {
-      // Normalize email
       if (userData.email) {
         userData.email = this.normalizeEmail(userData.email);
       }
 
-      // Ensure isDeleted is false
       userData.isDeleted = false;
 
       // Hash password if provided and not already hashed
