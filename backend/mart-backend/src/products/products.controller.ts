@@ -38,10 +38,7 @@ import { Public } from '../auth/decorators/public.decorator';
 @Controller('products')
 export class ProductsController {
   constructor(private productsService: ProductsService) {}
-
-  // ---------------------
-  // Public Endpoints
-  // ---------------------
+  // This is Public Endpoints
   @Public()
   @Get()
   @ApiOperation({ summary: 'List products with optional search & pagination' })
@@ -58,14 +55,10 @@ export class ProductsController {
   async findOne(@Param('id', ParseIntPipe) id: number) {
     return this.productsService.findOne(id);
   }
-
-  // ---------------------
+  
   // Admin Endpoints (TEMPORARILY PUBLIC FOR TESTING)
-  // ---------------------
-  @Public() // Remove this after testing
-  // @UseGuards(JwtAuthGuard, RolesGuard)
-  // @Roles('admin')
-  // @ApiBearerAuth()
+  @Public() 
+  
   @Post()
   @ApiOperation({ summary: 'Create product (Admin only)' })
   @ApiConsumes('multipart/form-data')
@@ -91,7 +84,7 @@ export class ProductsController {
       throw new BadRequestException('Product image is required');
     }
 
-    // CRITICAL: Always use /uploads/ prefix for consistency
+    // /uploads folder
     const imageUrl = `/uploads/${file.filename}`;
     
     console.log('📸 Image uploaded:', {
