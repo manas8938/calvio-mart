@@ -1,4 +1,3 @@
-// src/orders/dto/create-order.dto.ts
 import { IsEmail, IsNotEmpty, IsOptional, IsArray, ValidateNested, IsString, Matches } from 'class-validator';
 import { Type } from 'class-transformer';
 import { OrderItemDto } from './order-item.dto';
