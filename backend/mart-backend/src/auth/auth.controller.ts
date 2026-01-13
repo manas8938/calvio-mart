@@ -28,9 +28,7 @@ import { Public } from './decorators/public.decorator';
 import * as bcrypt from 'bcrypt';
 import { UserRole } from '../users/entities/user.entity';
 
-/* -------------------------
-   DTOs
-------------------------- */
+// DTOs
 export class SendOtpDto {
   @IsEmail()
   @IsNotEmpty()
@@ -76,9 +74,7 @@ export class AdminSignupDto {
   fullName: string;
 }
 
-/* -------------------------
-   OTP Storage
-------------------------- */
+// OTP Storage 
 type OtpRecord = { secret: string; stepSeconds: number; expiresAt: number };
 const otpStore = new Map<string, OtpRecord>();
 
@@ -103,9 +99,7 @@ export class AuthController {
     private readonly jwtService: JwtService,
   ) {}
 
-  /* -------------------------
-     Admin Signup: POST /auth/admin/signup
-  ------------------------- */
+  //Admin Signup: POST /auth/admin/signup 
   @Public()
   @Post('admin/signup')
   @ApiOperation({ summary: 'Admin signup' })
@@ -136,7 +130,6 @@ export class AuthController {
           email: existingUser.email,
         };
       } else {
-        // User has password - they already have a full account
         throw new ConflictException('Email already registered. Please login.');
       }
     }
@@ -161,9 +154,6 @@ export class AuthController {
     };
   }
 
-  /* -------------------------
-     Admin Login: POST /auth/admin/login
-  ------------------------- */
   @Public()
   @Post('admin/login')
   @ApiOperation({ summary: 'Admin login' })
@@ -226,9 +216,6 @@ export class AuthController {
     };
   }
 
-  /* -------------------------
-     Send OTP: POST /auth/send-otp
-  ------------------------- */
   @Public()
   @Post('send-otp')
   @ApiOperation({ summary: 'Send OTP to user email' })
@@ -283,9 +270,6 @@ export class AuthController {
     };
   }
 
-  /* -------------------------
-     Verify OTP: POST /auth/verify-otp
-  ------------------------- */
   @Public()
   @Post('verify-otp')
   @ApiOperation({ summary: 'Verify OTP' })
