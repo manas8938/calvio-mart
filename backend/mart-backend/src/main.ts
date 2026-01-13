@@ -1,5 +1,3 @@
-// backend/mart-backend/src/main.ts - COMPLETE FIX
-
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
@@ -12,20 +10,17 @@ import * as fs from 'fs';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  // ====================
-  // CORS - CRITICAL FOR IMAGE LOADING
-  // ====================
+ 
   app.enableCors({
-    origin: '*', // Allow all origins for development
+    origin: '*', 
     credentials: true,
     methods: ['GET', 'POST', 'PATCH', 'DELETE', 'PUT', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
     exposedHeaders: ['Content-Disposition'],
   });
 
-  // ====================
-  // CRITICAL: Static file serving for uploaded images
-  // ====================
+  // Static file serving for uploaded images
+
   const possiblePaths = [
     join(__dirname, '..', 'uploads'),
     join(__dirname, '..', '..', 'uploads'),
@@ -50,15 +45,12 @@ async function bootstrap() {
   console.log('📂 Uploads directory:', uploadsPath);
   console.log('='.repeat(60));
   
-  // PRIORITY 1: Express static middleware with CORS headers
   app.use('/uploads', express.static(uploadsPath, {
     setHeaders: (res, path) => {
-      // Set CORS headers for images
       res.set('Access-Control-Allow-Origin', '*');
       res.set('Cross-Origin-Resource-Policy', 'cross-origin');
       res.set('Cache-Control', 'public, max-age=31536000');
-      
-      // Set correct content type
+    
       if (path.endsWith('.jpg') || path.endsWith('.jpeg')) {
         res.set('Content-Type', 'image/jpeg');
       } else if (path.endsWith('.png')) {
@@ -71,10 +63,7 @@ async function bootstrap() {
     },
     fallthrough: false, // Return 404 if file not found
   }));
-
-  // ====================
   // Global validation
-  // ====================
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -85,10 +74,7 @@ async function bootstrap() {
       },
     }),
   );
-
-  // ====================
   // Swagger API Documentation
-  // ====================
   const config = new DocumentBuilder()
     .setTitle('Calvio Mart API')
     .setDescription('Complete E-Commerce API with Image Upload Support')
