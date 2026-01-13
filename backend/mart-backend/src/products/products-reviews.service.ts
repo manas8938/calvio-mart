@@ -15,7 +15,6 @@ export class ProductReviewsService {
   ) {}
 
   async create(productId: number, userId: number | null, dto: CreateReviewDto) {
-    // Defensive: ensure integer rating even if DTO passed something odd
     const rating = Math.floor(Number(dto.rating));
     if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
       throw new BadRequestException('rating must be an integer between 1 and 5');
@@ -23,8 +22,6 @@ export class ProductReviewsService {
 
     const product = await this.productRepo.findOne({ where: { id: productId, isDeleted: false } });
     if (!product) throw new NotFoundException('Product not found');
-
-    // optional: prevent duplicate reviews by same user
     if (userId) {
       const exists = await this.reviewRepo.findOne({
         where: { product: { id: productId }, user: { id: userId }, isDeleted: false },
@@ -41,8 +38,6 @@ export class ProductReviewsService {
 
     await this.reviewRepo.manager.transaction(async (em) => {
       await em.getRepository(ProductReview).save(review);
-
-      // Use repository QB so TypeORM maps property -> DB column names
       const raw = await em
         .getRepository(ProductReview)
         .createQueryBuilder('r')
