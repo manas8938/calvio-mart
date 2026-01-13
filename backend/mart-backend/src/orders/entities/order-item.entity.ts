@@ -1,4 +1,3 @@
-// src/orders/entities/order-item.entity.ts
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -31,11 +30,11 @@ export class OrderItem {
     scale: 2,
     transformer: ColumnNumericTransformer,
   })
-  price: number; // snapshot price
+  price: number; 
 
   @Column({ nullable: true })
-  title?: string; // snapshot title
+  title?: string; 
 
   @Column({ nullable: true })
-  image?: string; // optional
+  image?: string; 
 }
