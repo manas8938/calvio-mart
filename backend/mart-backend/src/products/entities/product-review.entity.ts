@@ -25,14 +25,12 @@ export class ProductReview {
   @JoinColumn({ name: 'user_id' })
   user?: User;
 
-  // rating stored as integer in DB
   @Column('int', { name: 'rating' })
   rating: number;
 
   @Column({ type: 'text', name: 'comment', nullable: true })
   comment?: string;
-
-  // map to snake_case column if your DB uses is_deleted
+  
   @Column({ name: 'is_deleted', default: false })
   isDeleted: boolean;
 
