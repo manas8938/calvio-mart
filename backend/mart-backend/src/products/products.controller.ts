@@ -56,7 +56,7 @@ export class ProductsController {
     return this.productsService.findOne(id);
   }
   
-  // Admin Endpoints (TEMPORARILY PUBLIC FOR TESTING)
+  // Admin Endpoints (I used TEMPORARILY PUBLIC for testing)
   @Public() 
   
   @Post()
