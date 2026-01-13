@@ -1,4 +1,3 @@
-// src/orders/entities/order.entity.ts
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -44,7 +43,6 @@ export class Order {
   @OneToMany(() => OrderItem, (item) => item.order, { cascade: true, eager: true })
   items: OrderItem[];
 
-  // products total (without delivery) — default 0 for safe migrations
   @Column('decimal', {
     precision: 10,
     scale: 2,
@@ -53,7 +51,6 @@ export class Order {
   })
   subtotal: number;
 
-  // fixed delivery charge for Peshawar (default 150)
   @Column('decimal', {
     precision: 10,
     scale: 2,
@@ -62,7 +59,6 @@ export class Order {
   })
   deliveryCharge: number;
 
-  // subtotal + deliveryCharge
   @Column('decimal', {
     precision: 10,
     scale: 2,
@@ -71,7 +67,6 @@ export class Order {
   })
   totalAmount: number;
 
-  // optional address text
   @Column({ type: 'text', nullable: true })
   address?: string;
 
