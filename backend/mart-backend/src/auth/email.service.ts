@@ -1,4 +1,3 @@
-// src/auth/email.service.ts - FIXED
 import { Injectable, Logger } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
 
