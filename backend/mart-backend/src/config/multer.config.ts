@@ -1,4 +1,3 @@
-// src/config/multer.config.ts
 import { diskStorage } from 'multer';
 import { extname, join } from 'path';
 import { existsSync, mkdirSync } from 'fs';
@@ -32,6 +31,6 @@ export const multerConfig = {
     }
   },
   limits: {
-    fileSize: 5 * 1024 * 1024, // 5MB
+    fileSize: 5 * 1024 * 1024, // 5MB image limit
   },
 };
