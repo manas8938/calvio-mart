@@ -75,9 +75,7 @@ export class OrdersController {
     return this.ordersService.softDelete(id);
   }
 
-  // ==============================
   // Get orders by user email
-  // ==============================
   @Public()
   @Get('user/:email')
   @ApiOperation({ summary: 'Get orders by user email' })
