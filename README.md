@@ -1,6 +1,6 @@
 # 🛒 Calvio Mart - Full-Stack E-Commerce Platform
 
-A production-ready, full-featured e-commerce platform built with React.js, NestJS, PostgreSQL, Swagger, and Docker, serving 1,000+ daily users.
+A production-ready, full-featured e-commerce platform built with **React.js**, **NestJS**, **PostgreSQL**, **Swagger**, and **Docker**, serving **1,000+ daily users**.
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -10,32 +10,45 @@ A production-ready, full-featured e-commerce platform built with React.js, NestJ
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
 
+---
+
 ## 📖 Description
 
-Calvio Mart is a complete e-commerce solution I built as a Full Stack Developer. The platform handles everything from user authentication to order management, featuring a responsive React.js frontend and a secure NestJS backend with 50+ RESTful API endpoints. Currently serving 1,000+ daily users with Docker containerization for reliable deployment.
+Calvio Mart is a complete e-commerce solution I built as a **Full Stack Developer**. The platform handles everything from **user authentication** to **order management**, featuring:
+
+- A **responsive React.js frontend**
+- A **secure NestJS backend** with 50+ RESTful API endpoints
+- Docker containerization for reliable deployment
+- Currently serving **1,000+ daily users**
+
+---
 
 ## ✨ Features
 
-- **Product Management** - Complete CRUD operations for products
-- **Shopping Cart** - Add, update, remove items
-- **Order System** - Place orders with real-time tracking
-- **Authentication** - JWT with OTP email verification
-- **Admin Panel** - RBAC-based secure admin dashboard
-- **WhatsApp Notifications** - Order confirmations via WhatsApp
-- **Payment Gateway** - Secure payment integration
-- **Swagger Docs** - Auto-generated API documentation
+- **Product Management** – Complete CRUD operations for products  
+- **Shopping Cart** – Add, update, remove items  
+- **Order System** – Place orders with real-time tracking  
+- **Authentication** – JWT with OTP email verification  
+- **Admin Panel** – RBAC-based secure admin dashboard  
+- **WhatsApp Notifications** – Order confirmations via WhatsApp  
+- **Payment Gateway** – Secure payment integration  
+- **Swagger Docs** – Auto-generated API documentation  
+
+---
 
 ## 🛠️ Tech Stack
 
-| Category | Technology |
-|----------|------------|
-| Frontend | React.js, JavaScript, TypeScript, CSS |
-| Backend | NestJS, Node.js, TypeORM |
-| Database | PostgreSQL |
-| Auth | JWT, Bcrypt, OTP |
-| Docs | Swagger/OpenAPI |
-| DevOps | Docker, Git, CI/CD |
-| Integrations | WhatsApp API, Payment Gateway |
+| Category       | Technology                         |
+|----------------|-----------------------------------|
+| Frontend       | React.js, JavaScript, TypeScript, CSS |
+| Backend        | NestJS, Node.js, TypeORM           |
+| Database       | PostgreSQL                        |
+| Auth           | JWT, Bcrypt, OTP                   |
+| Docs           | Swagger/OpenAPI                   |
+| DevOps         | Docker, Git, CI/CD                |
+| Integrations   | WhatsApp API, Payment Gateway     |
+
+---
 
 ## 🚀 Quick Start
 
@@ -45,39 +58,8 @@ Calvio Mart is a complete e-commerce solution I built as a Full Stack Developer.
 - PostgreSQL 15+
 - Docker (optional)
 
-## 🐳 Docker
+### 🐳 Using Docker
 
+```bash
 docker-compose up -d
 npm run start:dev
-
-## 📄 License
-
-MIT License
-
-Copyright (c) 2026 Muhammad Anas Nawaz
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-## 👨‍💻 Author
-
-**Muhammad Anas Nawaz**
-
-- GitHub: [@manas8938](https://github.com/manas8938)
-- LinkedIn: [Muhammad Anas Nawaz](https://linkedin.com/in/muhammad-anas-nawaz-9730a8287)
-- Portfolio: [anas-portfolio](https://anas-portfolio-rho.vercel.app/)
