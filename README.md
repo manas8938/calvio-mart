@@ -1,3 +1,10 @@
+# Calvio Mart - README (Same Format as SaaS Backend)
+
+---
+
+## README.md (Copy This)
+
+```markdown
 # 🛒 Calvio Mart - Full-Stack E-Commerce Platform
 
 A production-ready, full-featured e-commerce platform built with React.js, NestJS, PostgreSQL, Swagger, and Docker, serving 1,000+ daily users.
@@ -9,7 +16,6 @@ A production-ready, full-featured e-commerce platform built with React.js, NestJ
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ## 📖 Description
 
@@ -17,44 +23,31 @@ Calvio Mart is a complete e-commerce solution I built as a Full Stack Developer.
 
 ## ✨ Features
 
-### 🛍️ Customer Features
-- Browse and search products by category
-- Shopping cart management
-- Order placement and real-time tracking
-- User registration with OTP email verification
-- WhatsApp order confirmations
-- Secure payment gateway integration
-
-### 👨‍💼 Admin Panel
-- Complete admin dashboard
-- Product management (Create, Read, Update, Delete)
-- Order management and status updates
-- User management
-- Sales analytics and reports
-- Role-based access control (RBAC)
-
-### 🔐 Security Features
-- JWT authentication with refresh tokens
-- Role-based access control (RBAC)
-- Bcrypt password hashing
-- OTP email verification
-- Input validation on all endpoints
-- Secure API design
+- **Product Management** - Complete CRUD operations for products
+- **Shopping Cart** - Add, update, remove items
+- **Order System** - Place orders with real-time tracking
+- **Authentication** - JWT with OTP email verification
+- **Admin Panel** - RBAC-based secure admin dashboard
+- **WhatsApp Notifications** - Order confirmations via WhatsApp
+- **Payment Gateway** - Secure payment integration
+- **Swagger Docs** - Auto-generated API documentation
 
 ## 🛠️ Tech Stack
 
-| Category | Technologies |
-|----------|--------------|
-| **Frontend** | React.js, JavaScript, TypeScript, CSS, Context API |
-| **Backend** | NestJS, Node.js, TypeORM, Swagger, Nodemailer |
-| **Database** | PostgreSQL |
-| **Authentication** | JWT, Bcrypt, OTP Verification |
-| **DevOps** | Docker, Git, CI/CD |
-| **Integrations** | WhatsApp API, Payment Gateway |
+| Category | Technology |
+|----------|------------|
+| Frontend | React.js, JavaScript, TypeScript, CSS |
+| Backend | NestJS, Node.js, TypeORM |
+| Database | PostgreSQL |
+| Auth | JWT, Bcrypt, OTP |
+| Docs | Swagger/OpenAPI |
+| DevOps | Docker, Git, CI/CD |
+| Integrations | WhatsApp API, Payment Gateway |
 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+
 - PostgreSQL 15+
 - Docker (optional)
@@ -62,17 +55,135 @@ Calvio Mart is a complete e-commerce solution I built as a Full Stack Developer.
 ### Installation
 
 ```bash
-# Clone repository
 git clone https://github.com/manas8938/calvio-mart.git
 cd calvio-mart
 
-# Backend setup
+# Backend
 cd backend
 npm install
 cp .env.example .env
 npm run start:dev
 
-# Frontend setup (new terminal)
+# Frontend (new terminal)
 cd ../frontend
 npm install
 npm run dev
+```
+
+### API Documentation
+
+```
+http://localhost:3000/docs
+```
+
+## 📋 API Endpoints
+
+### Auth
+
+- POST `/api/auth/register` - Register user
+- POST `/api/auth/login` - Login user
+- POST `/api/auth/verify-otp` - Verify OTP
+- POST `/api/auth/forgot-password` - Password reset
+
+### Products
+
+- GET `/api/products` - Get all products
+- GET `/api/products/:id` - Get product by ID
+- POST `/api/products` - Create product (Admin)
+- PATCH `/api/products/:id` - Update product (Admin)
+- DELETE `/api/products/:id` - Delete product (Admin)
+
+### Orders
+
+- GET `/api/orders` - Get user orders
+- GET `/api/orders/:id` - Get order details
+- POST `/api/orders` - Create order
+- PATCH `/api/orders/:id/status` - Update status (Admin)
+
+### Cart
+
+- GET `/api/cart` - Get user cart
+- POST `/api/cart/add` - Add to cart
+- PATCH `/api/cart/update/:id` - Update cart item
+- DELETE `/api/cart/remove/:id` - Remove from cart
+
+### Users
+
+- GET `/api/users` - Get all users (Admin)
+- GET `/api/users/:id` - Get user by ID
+- PATCH `/api/users/:id` - Update user
+- DELETE `/api/users/:id` - Delete user (Admin)
+
+### Payments
+
+- POST `/api/payments/initiate` - Initiate payment
+- POST `/api/payments/verify` - Verify payment
+
+## 🐳 Docker
+
+```bash
+docker-compose up -d
+npm run start:dev
+```
+
+## 📄 License
+
+MIT License - see LICENSE file.
+
+## 👨‍💻 Author
+
+**Muhammad Anas Nawaz**
+
+- GitHub: [@manas8938](https://github.com/manas8938)
+- LinkedIn: [Muhammad Anas Nawaz](https://linkedin.com/in/muhammad-anas-nawaz-9730a8287)
+- Portfolio: [anas-portfolio](https://anas-portfolio-rho.vercel.app/)
+```
+
+---
+
+## LICENSE (Create Separate File)
+
+```
+MIT License
+
+Copyright (c) 2026 Muhammad Anas Nawaz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## How to Add on GitHub:
+
+### Step 1: Add README.md
+1. Go to: `https://github.com/manas8938/calvio-mart`
+2. Click **"Add file"** → **"Create new file"**
+3. Name: `README.md`
+4. Paste README content
+5. Click **"Commit changes"**
+
+### Step 2: Add LICENSE
+1. Click **"Add file"** → **"Create new file"**
+2. Name: `LICENSE`
+3. Paste LICENSE content
+4. Click **"Commit changes"**
+
+---
+
+Now it matches your Multi-Tenant SaaS Backend format! 🚀
